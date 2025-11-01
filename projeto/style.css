@@ -1,0 +1,253 @@
+/* RESET E CORES */
+:root {
+  --primary-blue: #2b00ff;
+  --light-gray: #6e6e6e;
+  --bg-color: #f0f0f0; /* Fundo cinza claro */
+  --white: #ffffff;
+  --login-box-width: 450px; /* AJUSTADO: Aumenta a largura da caixa de login */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* 1. LAYOUT PRINCIPAL E FUNDO (CSS Grid para layout de 2 colunas) */
+.main-wrapper {
+  min-height: 100vh;
+  display: grid;
+  /* Coluna 1: Flexível (Arte) | Coluna 2: Fixo (Caixa de Login + Espaço) */
+  grid-template-columns: 1fr calc(var(--login-box-width) + 150px);
+  position: relative;
+}
+
+/* 2. BARRA BRANCA SUPERIOR COM LOGO */
+.top-bar {
+  grid-column: 1 / span 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-color: var(--white);
+  z-index: 20;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  width: 140px;
+  height: auto;
+  z-index: 25;
+}
+
+/* 3. CONTAINER DE CONTEÚDO (Centraliza o texto/login) */
+.container {
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 100px;
+  z-index: 10;
+}
+
+/* 4. LADO ESQUERDO (Texto) */
+.left-side {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50px;
+  padding-right: 150px;
+  position: relative;
+}
+
+.welcome-title {
+  color: var(--primary-blue);
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.text-content p {
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.thanks-text {
+  margin-top: 10px;
+}
+
+/* 5. ARTE (CÍRCULO E DENTISTA) - Fixada na lateral esquerda do viewport */
+.image-art {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.circle {
+  position: absolute;
+  bottom: -80px;
+  left: -200px;
+  width: 550px;
+  height: 550px;
+  background: var(--primary-blue);
+  border-radius: 50%;
+  z-index: 6;
+}
+
+.dentista-img {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 380px;
+  height: auto;
+  z-index: 7;
+}
+
+/* 6. LADO DIREITO (CAIXA DE LOGIN) */
+.right-side {
+  grid-column: 2 / 3;
+  width: var(--login-box-width);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 50px;
+  z-index: 10;
+}
+
+.login-box {
+  width: var(--login-box-width);
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+}
+
+/* ESTILOS DO FORMULÁRIO */
+.area-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 20px;
+}
+.remember-me label {
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+.access-button {
+  width: 100%;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.access-button:hover {
+  background-color: #2000c4;
+}
+.forgot-password-link {
+  color: var(--primary-blue);
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+.first-access-text {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+  font-size: 0.9rem;
+}
+.register-link {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* RESPONSIVIDADE (Celular/Tablet - Quebra o layout de coluna) */
+@media (max-width: 950px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 80px;
+  }
+
+  /* Remove o fixo e volta ao fluxo */
+  .image-art {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    order: 2;
+  }
+
+  /* Centraliza a arte no móvel */
+  .dentista-img {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+
+  .circle {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .left-side {
+    padding: 0 20px;
+    text-align: center;
+    order: 1;
+  }
+
+  .right-side {
+    width: 100%;
+    padding: 20px;
+    order: 3;
+    justify-content: center;
+  }
+}
