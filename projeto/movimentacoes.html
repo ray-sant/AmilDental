@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Relatórios - Amil Dental</title>
+    <title>Movimentações - Amil Dental</title>
     <link rel="stylesheet" href="dashboard.css" />
-    <link rel="stylesheet" href="relatorios.css" />
+    <link rel="stylesheet" href="produtos.css" />
+    <link rel="stylesheet" href="movimentacoes.css" />
   </head>
   <body>
     <div class="dashboard-wrapper">
@@ -22,55 +23,75 @@
           <ul>
             <li><a href="dashboard.html">Dashboard</a></li>
             <li><a href="produtos.html">Gerenciar Produtos</a></li>
-            <li><a href="movimentacoes.html">Movimentações</a></li>
             <li class="active">
-              <a href="relatorios.html">Relatórios</a>
+              <a href="movimentacoes.html">Movimentações</a>
             </li>
+            <li><a href="relatorios.html">Relatórios</a></li>
             <li><a href="#">Usuários</a></li>
           </ul>
         </nav>
 
         <main class="main-content">
-          <h1>Relatórios e Histórico (RF004 / UC007)</h1>
+          <h1>Registrar Movimentação de Estoque</h1>
 
-          <section class="filter-container">
-            <h2>Filtrar Histórico de Utilização</h2>
-            <form class="filter-form">
+          <section class="form-container movement-form">
+            <h2>Registrar Entrada ou Saída</h2>
+            <form>
               <div class="form-group">
-                <label for="filtro-data-inicio">Data Início:</label>
-                <input type="date" id="filtro-data-inicio" />
-              </div>
-              <div class="form-group">
-                <label for="filtro-data-fim">Data Fim:</label>
-                <input type="date" id="filtro-data-fim" />
-              </div>
-              <div class="form-group">
-                <label for="filtro-produto">Produto:</label>
-                <input
-                  type="text"
-                  id="filtro-produto"
-                  placeholder="Nome do produto"
-                />
-              </div>
-              <div class="form-group">
-                <label for="filtro-tipo">Tipo de Movimentação:</label>
-                <select id="filtro-tipo">
-                  <option value="">Todos</option>
-                  <option value="entrada">Entrada</option>
-                  <option value="saida">Saída</option>
+                <label for="mov-tipo">Tipo de Movimentação:</label>
+                <select id="mov-tipo" required>
+                  <option value="" disabled selected>Selecione...</option>
+                  <option value="entrada">Entrada (Recebimento)</option>
+                  <option value="saida">Saída (Uso Clínico)</option>
+                  <option value="ajuste">Ajuste (Perda/Vencido)</option>
                 </select>
               </div>
+
+              <div class="form-group">
+                <label for="mov-produto">Produto:</label>
+                <input
+                  type="text"
+                  id="mov-produto"
+                  placeholder="Digite o nome ou código do produto"
+                  required
+                />
+                </div>
+
+              <div class="form-group">
+                <label for="mov-qtd">Quantidade:</label>
+                <input type="number" id="mov-qtd" placeholder="0" required />
+              </div>
+
+              <div class="form-group">
+                <label for="mov-unidade">Unidade:</label>
+                <input
+                  type="text"
+                  id="mov-unidade"
+                  placeholder="Ex: CX, UN"
+                  disabled
+                />
+                <small>(Preenchido ao selecionar o produto)</small>
+              </div>
+
+              <div class="form-group form-group-full">
+                <label for="mov-obs">Observação / Motivo:</label>
+                <input
+                  type="text"
+                  id="mov-obs"
+                  placeholder="Ex: Uso no Paciente X, Recebimento NF 123, Ajuste de inventário"
+                />
+              </div>
+
               <div class="form-actions">
-                <button type="submit" class="btn-filtrar">Filtrar</button>
-                <button type="button" class="btn-exportar">
-                  Exportar PDF/Excel
+                <button type="submit" class="btn-salvar">
+                  Confirmar Movimentação
                 </button>
               </div>
             </form>
           </section>
 
           <section class="table-container">
-            <h2>Histórico de Movimentações</h2>
+            <h2>Últimas 10 Movimentações</h2>
             <table>
               <thead>
                 <tr>
@@ -78,8 +99,7 @@
                   <th>Produto</th>
                   <th>Tipo</th>
                   <th>Quantidade</th>
-                  <th>Usuário Responsável (RN005)</th>
-                  <th>Estoque Resultante</th>
+                  <th>Usuário Responsável</th>
                 </tr>
               </thead>
               <tbody>
@@ -89,7 +109,6 @@
                   <td class="tipo-saida">Saída</td>
                   <td>-50 CX</td>
                   <td>Admin</td>
-                  <td>15 CX</td>
                 </tr>
                 <tr>
                   <td>03/11/2025 09:15</td>
@@ -97,7 +116,6 @@
                   <td class="tipo-entrada">Entrada</td>
                   <td>+20 UN</td>
                   <td>Admin</td>
-                  <td>60 UN</td>
                 </tr>
                 <tr>
                   <td>01/11/2025 17:45</td>
@@ -105,25 +123,8 @@
                   <td class="tipo-saida">Saída</td>
                   <td>-10 CX</td>
                   <td>Almoxarifado</td>
-                  <td>5 CX</td>
                 </tr>
-                <tr>
-                  <td>30/10/2025 11:00</td>
-                  <td>Broca Diamantada 2135</td>
-                  <td class="tipo-entrada">Entrada</td>
-                  <td>+100 UN</td>
-                  <td>Admin</td>
-                  <td>150 UN</td>
-                </tr>
-                <tr>
-                  <td>28/10/2025 14:20</td>
-                  <td>Luva Cirúrgica (M)</td>
-                  <td class="tipo-entrada">Entrada</td>
-                  <td>+50 CX</td>
-                  <td>Almoxarifado</td>
-                  <td>65 CX</td>
-                </tr>
-              </tbody>
+                </tbody>
             </table>
           </section>
         </main>
