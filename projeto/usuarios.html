@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Usuários - Amil Dental</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="produtos.css" />
+    <link rel="stylesheet" href="usuarios.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <header class="dash-header">
+        <img src="imagens/logo.png" alt="Logo Amil Dental" class="logo-dash" />
+        <div class="user-info">
+          <span>Olá, Administrador</span>
+          <a href="index.html" class="logout-link">Sair</a>
+        </div>
+      </header>
+
+      <div class="dash-container">
+        <nav class="sidebar">
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produtos.html">Gerenciar Produtos</a></li>
+            <li><a href="movimentacoes.html">Movimentações</a></li>
+            <li><a href="relatorios.html">Relatórios</a></li>
+            <li class="active"><a href="usuarios.html">Usuários</a></li>
+          </ul>
+        </nav>
+
+        <main class="main-content">
+          <h1>Gerenciar Usuários do Sistema</h1>
+
+          <section class="form-container">
+            <h2>Cadastrar Novo Usuário</h2>
+            <form class="user-form">
+              <div class="form-group">
+                <label for="user-nome">Nome Completo:</label>
+                <input type="text" id="user-nome" required />
+              </div>
+              <div class="form-group">
+                <label for="user-login">Usuário (Login):</label>
+                <input type="text" id="user-login" required />
+              </div>
+              <div class="form-group">
+                <label for="user-perfil">Perfil de Acesso:</label>
+                <select id="user-perfil" required>
+                  <option value="" disabled selected>Selecione...</option>
+                  <option value="admin">Admin (Administrador)</option>
+                  <option value="recepcionista">Recepcionista</option>
+                  <option value="dentista">Dentista</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="user-senha">Senha Provisória:</label>
+                <input type="password" id="user-senha" />
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-salvar">Salvar Usuário</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="table-container">
+            <h2>Usuários Cadastrados</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nome Completo</th>
+                  <th>Usuário (Login)</th>
+                  <th>Perfil</th>
+                  <th>Status</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Administrador do Sistema</td>
+                  <td>Admin</td>
+                  <td>Admin</td>
+                  <td class="status-ativo">Ativo</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete" disabled>
+                      Excluir
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Nicholas do Nascimento</td>
+                  <td>nicholas.ramos</td>
+                  <td>Admin</td>
+                  <td class="status-ativo">Ativo</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rayssa dos Santos</td>
+                  <td>rayssa.silva</td>
+                  <td>Recepcionista</td>
+                  <td class="status-ativo">Ativo</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Dr. Carlos Daniel</td>
+                  <td>carlos.daniel</td>
+                  <td>Dentista</td>
+                  <td class="status-inativo">Inativo</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
