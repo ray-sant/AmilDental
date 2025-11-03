@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciar Produtos - Amil Dental</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="produtos.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <header class="dash-header">
+        <img src="imagens/logo.png" alt="Logo Amil Dental" class="logo-dash" />
+        <div class="user-info">
+          <span>Olá, Administrador</span>
+          <a href="index.html" class="logout-link">Sair</a>
+        </div>
+      </header>
+
+      <div class="dash-container">
+        <nav class="sidebar">
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="active">
+              <a href="produtos.html">Gerenciar Produtos</a>
+            </li>
+            <li><a href="#">Movimentações</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Usuários</a></li>
+          </ul>
+        </nav>
+
+        <main class="main-content">
+          <h1>Gerenciar Produtos</h1>
+
+          <section class="form-container">
+            <h2>Cadastrar Novo Produto</h2>
+            <form class="product-form">
+              <div class="form-group">
+                <label for="prod-nome">Nome do Produto:</label>
+                <input type="text" id="prod-nome" required />
+              </div>
+              <div class="form-group">
+                <label for="prod-tipo">Tipo:</label>
+                <input type="text" id="prod-tipo" placeholder="Ex: Resina, Broca, Luva" />
+              </div>
+              <div class="form-group">
+                <label for="prod-fabricante">Fabricante:</label>
+                <input type="text" id="prod-fabricante" />
+              </div>
+              <div class="form-group">
+                <label for="prod-lote">Lote:</label>
+                <input type="text" id="prod-lote" />
+              </div>
+              <div class="form-group">
+                <label for="prod-validade">Data de Validade:</label>
+                <input type="date" id="prod-validade" />
+              </div>
+              <div class="form-group">
+                <label for="prod-unidade">Unidade (Ex: CX, UN):</label>
+                <input type="text" id="prod-unidade" />
+              </div>
+              <div class="form-group">
+                <label for="prod-estoque-min">Estoque Mínimo (RN001):</label>
+                <input type="number" id="prod-estoque-min" required />
+              </div>
+              <div class="form-group">
+                <label for="prod-local">Local de Armazenamento:</label>
+                <input type="text" id="prod-local" placeholder="Ex: Prateleira A-02" />
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-salvar">Salvar Produto</button>
+                <button type="reset" class="btn-limpar">Limpar</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="table-container">
+            <h2>Estoque Atual (UC002)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Produto</th>
+                  <th>Estoque Atual</th>
+                  <th>Estoque Mínimo</th>
+                  <th>Data de Validade</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Resina Composta A2</td>
+                  <td>60 UN</td>
+                  <td>20 UN</td>
+                  <td>12/12/2026</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Luva Cirúrgica (M)</td>
+                  <td>15 CX</td>
+                  <td>10 CX</td>
+                  <td>N/A</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Anestésico Lidocaína</td>
+                  <td>5 CX</td>
+                  <td style="color: red; font-weight: bold">5 CX</td>
+                  <td>01/02/2026</td>
+                  <td>
+                    <button class="btn-action btn-edit">Editar</button>
+                    <button class="btn-action btn-delete">Excluir</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
