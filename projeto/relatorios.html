@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relatórios - Amil Dental</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="relatorios.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <header class="dash-header">
+        <img src="imagens/logo.png" alt="Logo Amil Dental" class="logo-dash" />
+        <div class="user-info">
+          <span>Olá, Administrador</span>
+          <a href="index.html" class="logout-link">Sair</a>
+        </div>
+      </header>
+
+      <div class="dash-container">
+        <nav class="sidebar">
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="produtos.html">Gerenciar Produtos</a></li>
+            <li><a href="#">Movimentações</a></li>
+            <li class="active">
+              <a href="relatorios.html">Relatórios</a>
+            </li>
+            <li><a href="#">Usuários</a></li>
+          </ul>
+        </nav>
+
+        <main class="main-content">
+          <h1>Relatórios e Histórico (RF004 / UC007)</h1>
+
+          <section class="filter-container">
+            <h2>Filtrar Histórico de Utilização</h2>
+            <form class="filter-form">
+              <div class="form-group">
+                <label for="filtro-data-inicio">Data Início:</label>
+                <input type="date" id="filtro-data-inicio" />
+              </div>
+              <div class="form-group">
+                <label for="filtro-data-fim">Data Fim:</label>
+                <input type="date" id="filtro-data-fim" />
+              </div>
+              <div class="form-group">
+                <label for="filtro-produto">Produto:</label>
+                <input
+                  type="text"
+                  id="filtro-produto"
+                  placeholder="Nome do produto"
+                />
+              </div>
+              <div class="form-group">
+                <label for="filtro-tipo">Tipo de Movimentação:</label>
+                <select id="filtro-tipo">
+                  <option value="">Todos</option>
+                  <option value="entrada">Entrada</option>
+                  <option value="saida">Saída</option>
+                </select>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn-filtrar">Filtrar</button>
+                <button type="button" class="btn-exportar">
+                  Exportar PDF/Excel
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <section class="table-container">
+            <h2>Histórico de Movimentações</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Data/Hora</th>
+                  <th>Produto</th>
+                  <th>Tipo</th>
+                  <th>Quantidade</th>
+                  <th>Usuário Responsável (RN005)</th>
+                  <th>Estoque Resultante</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>03/11/2025 13:30</td>
+                  <td>Luva Cirúrgica (M)</td>
+                  <td class="tipo-saida">Saída</td>
+                  <td>-50 CX</td>
+                  <td>Admin</td>
+                  <td>15 CX</td>
+                </tr>
+                <tr>
+                  <td>03/11/2025 09:15</td>
+                  <td>Resina Composta A2</td>
+                  <td class="tipo-entrada">Entrada</td>
+                  <td>+20 UN</td>
+                  <td>Admin</td>
+                  <td>60 UN</td>
+                </tr>
+                <tr>
+                  <td>01/11/2025 17:45</td>
+                  <td>Anestésico Lidocaína</td>
+                  <td class="tipo-saida">Saída</td>
+                  <td>-10 CX</td>
+                  <td>Almoxarifado</td>
+                  <td>5 CX</td>
+                </tr>
+                <tr>
+                  <td>30/10/2025 11:00</td>
+                  <td>Broca Diamantada 2135</td>
+                  <td class="tipo-entrada">Entrada</td>
+                  <td>+100 UN</td>
+                  <td>Admin</td>
+                  <td>150 UN</td>
+                </tr>
+                <tr>
+                  <td>28/10/2025 14:20</td>
+                  <td>Luva Cirúrgica (M)</td>
+                  <td class="tipo-entrada">Entrada</td>
+                  <td>+50 CX</td>
+                  <td>Almoxarifado</td>
+                  <td>65 CX</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
