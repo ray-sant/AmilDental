@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Amil Dental</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-wrapper">
+      <header class="dash-header">
+        <img src="imagens/logo.png" alt="Logo Amil Dental" class="logo-dash" />
+        <div class="user-info">
+          <span>Olá, Administrador</span>
+          <a href="index.html" class="logout-link">Sair</a>
+        </div>
+      </header>
+
+      <div class="dash-container">
+        <nav class="sidebar">
+          <ul>
+            <li class="active"><a href="#">Dashboard</a></li>
+            <li><a href="#">Gerenciar Produtos</a></li>
+            <li><a href="#">Movimentações</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Usuários</a></li>
+          </ul>
+        </nav>
+
+        <main class="main-content">
+          <h1>Dashboard (Painel de Controle)</h1>
+
+          <section class="stats-cards">
+            <div class="card">
+              <h3>Itens Totais</h3>
+              <p>142</p>
+            </div>
+            <div class="card card-alert">
+              <h3>Abaixo do Mínimo</h3>
+              <p>5</p>
+              <small>(Requisito RF003)</small>
+            </div>
+            <div class="card card-warning">
+              <h3>Próximos do Vencimento</h3>
+              <p>12</p>
+              <small>(Requisito RN007)</small>
+            </div>
+          </section>
+
+          <section class="quick-actions">
+            <h2>Ações Rápidas</h2>
+            <button>Registrar Entrada</button>
+            <button>Registrar Saída</button>
+            <button>Novo Produto</button>
+          </section>
+
+          <section class="recent-activity">
+            <h2>Atividade Recente (Log de Auditoria - RF007)</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Data/Hora</th>
+                  <th>Usuário</th>
+                  <th>Ação</th>
+                  <th>Item</th>
+                  <th>Qtd.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>03/11/2025 13:30</td>
+                  <td>Admin</td>
+                  <td>Saída</td>
+                  <td>Luva Cirúrgica (M)</td>
+                  <td>-50</td>
+                </tr>
+                <tr>
+                  <td>03/11/2025 09:15</td>
+                  <td>Admin</td>
+                  <td>Entrada</td>
+                  <td>Resina Composta A2</td>
+                  <td>+20</td>
+                </tr>
+                <tr>
+                  <td>01/11/2025 17:45</td>
+                  <td>Almoxarifado</td>
+                  <td>Saída</td>
+                  <td>Anestésico Lidocaína</td>
+                  <td>-10</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
