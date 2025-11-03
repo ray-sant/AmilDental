@@ -1,0 +1,26 @@
+.movement-form form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.form-group-full {
+  grid-column: 1 / -1;
+}
+.form-group small {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 3px;
+}
+.tipo-entrada {
+  color: #5cb85c;
+  font-weight: bold;
+}
+.tipo-saida {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+.tipo-ajuste {
+  color: #f0ad4e;
+  font-weight: bold;
+}
