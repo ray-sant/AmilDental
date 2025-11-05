@@ -149,7 +149,7 @@ body {
   padding-bottom: 5px;
 }
 
-.quick-actions button {
+.quick-actions .btn-quick {
   background-color: var(--primary-blue, #2b00ff);
   color: var(--white, #fff);
   border: none;
@@ -160,9 +160,10 @@ body {
   cursor: pointer;
   margin-right: 10px;
   transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.quick-actions button:hover {
+.quick-actions .btn-quick:hover {
   background-color: #2000c4;
 }
 
